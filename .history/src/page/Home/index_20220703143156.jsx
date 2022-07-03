@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import "./index.scss";
 import { Card, Form, Input, Select, Button, Table, Modal } from "antd";
-import AddPage from "../../component/Home/add";
 export default function Home() {
+  const data = [
+    {
+      key: "1",
+      name: "胡彦斌",
+      age: 32,
+      address: "西湖区湖底公园1号",
+    },
+    {
+      key: "2",
+      name: "胡彦祖",
+      age: 42,
+      address: "西湖区湖底公园1号",
+    },
+  ];
   const [isModalVisible, setIsModalVisible] = useState(false);
   const columns = [
     {
@@ -21,41 +34,14 @@ export default function Home() {
       key: "address",
     },
   ];
-  const data = [
-    {
-      key: "1",
-      name: "胡彦斌",
-      age: 32,
-      address: "西湖区湖底公园1号",
-    },
-    {
-      key: "2",
-      name: "胡彦祖",
-      age: 42,
-      address: "西湖区湖底公园1号",
-    },
-  ];
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-  const AddCancel = (data) => {
-    console.log(data);
-    setIsModalVisible(false);
-  };
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-  const onFinish = (data) => {
-    console.log(data);
-  };
   return (
     <div className="home-div">
       <div className="home-select">
-        <Form onFinish={onFinish} validateTrigger={["onClick"]} layout="inline">
+        <Form
+          onFinish={this.onFinish}
+          validateTrigger={["onClick"]}
+          layout="inline"
+        >
           <Form.Item label="文件名" name="FileName">
             <Input></Input>
           </Form.Item>
@@ -76,13 +62,11 @@ export default function Home() {
       </div>
       <>
         <Modal
-          title="添加 数据"
-          visible={isModalVisible}
-          footer={null}
+          title="Basic Modal"
+          visible={this.IsModalVisible}
+          onOk={handleOk}
           onCancel={handleCancel}
-        >
-          <AddPage AddFunction={AddCancel}></AddPage>
-        </Modal>
+        ></Modal>
       </>
       <div className="home-table">
         <Card title="home表单" bordered={false} style={{ width: "100%" }}>

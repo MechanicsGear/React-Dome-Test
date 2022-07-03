@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { Card, Form, Input, Select, Button, Table, Modal } from "antd";
-import AddPage from "../../component/Home/add";
 export default function Home() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const columns = [
@@ -38,10 +37,7 @@ export default function Home() {
   const showModal = () => {
     setIsModalVisible(true);
   };
-  const AddCancel = (data) => {
-    console.log(data);
-    setIsModalVisible(false);
-  };
+
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -49,13 +45,14 @@ export default function Home() {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-  const onFinish = (data) => {
-    console.log(data);
-  };
   return (
     <div className="home-div">
       <div className="home-select">
-        <Form onFinish={onFinish} validateTrigger={["onClick"]} layout="inline">
+        <Form
+          onFinish={this.onFinish}
+          validateTrigger={["onClick"]}
+          layout="inline"
+        >
           <Form.Item label="文件名" name="FileName">
             <Input></Input>
           </Form.Item>
@@ -76,13 +73,11 @@ export default function Home() {
       </div>
       <>
         <Modal
-          title="添加 数据"
-          visible={isModalVisible}
-          footer={null}
+          title="Basic Modal"
+          visible={IsModalVisible}
+          onOk={handleOk}
           onCancel={handleCancel}
-        >
-          <AddPage AddFunction={AddCancel}></AddPage>
-        </Modal>
+        ></Modal>
       </>
       <div className="home-table">
         <Card title="home表单" bordered={false} style={{ width: "100%" }}>

@@ -40,7 +40,6 @@ export default function Home() {
   };
   const AddCancel = (data) => {
     console.log(data);
-    setIsModalVisible(false);
   };
   const handleOk = () => {
     setIsModalVisible(false);
@@ -76,7 +75,7 @@ export default function Home() {
       </div>
       <>
         <Modal
-          title="添加 数据"
+          title="Basic Modal"
           visible={isModalVisible}
           footer={null}
           onCancel={handleCancel}

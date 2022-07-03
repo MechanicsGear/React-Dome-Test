@@ -9,12 +9,8 @@ export default function Login() {
   const navigate = useNavigate();
   const onFinish = async (value) => {
     await loginStore.getToken(value);
-    if (getToken()) {
-      message.success("登录成功");
-      navigate("/", { replace: true });
-    } else {
-      message.error("账户或者密码错误");
-    }
+    if (getToken()) message.success("登录成功");
+    navigate("/", { replace: true });
   };
   return (
     <div className="login-div">

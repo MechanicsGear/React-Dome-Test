@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { Card, Form, Input, Select, Button, Table, Modal } from "antd";
-import AddPage from "../../component/Home/add";
 export default function Home() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const columns = [
@@ -38,10 +37,7 @@ export default function Home() {
   const showModal = () => {
     setIsModalVisible(true);
   };
-  const AddCancel = (data) => {
-    console.log(data);
-    setIsModalVisible(false);
-  };
+
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -75,14 +71,7 @@ export default function Home() {
         </Form>
       </div>
       <>
-        <Modal
-          title="添加 数据"
-          visible={isModalVisible}
-          footer={null}
-          onCancel={handleCancel}
-        >
-          <AddPage AddFunction={AddCancel}></AddPage>
-        </Modal>
+        <Modal title="Basic Modal" visible={isModalVisible}></Modal>
       </>
       <div className="home-table">
         <Card title="home表单" bordered={false} style={{ width: "100%" }}>
