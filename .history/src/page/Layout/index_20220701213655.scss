@@ -1,0 +1,72 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.user-div{
+  line-height: 64px;
+  display: flex;
+  float: right;
+}
+.user-img{
+  width: 45px;
+  height: 45px;
+
+}
+.user-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.user-name{
+  padding-left: 10px;
+  padding-right: 20px;
+  font-weight: 500;
+
+}
+.user-type{
+  z-index:99;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  display: none;
+}
+.user-div:hover{
+  .user-type{
+    z-index:99;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    display: block;
+  }
+}
+
+.user-type ul li{
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgb(203, 200, 200);
+ 
+}
+
+.user-type ul li:nth-child(1){
+  border-radius:5px 5px 0px  0px;
+}
+.user-type ul li:nth-child(2){
+  border-radius:0px 0px 5px  5px;
+}
+.user-type ul li:hover{
+  background-color: rgb(136, 133, 133);
+  color: #fff;
+}
+
+

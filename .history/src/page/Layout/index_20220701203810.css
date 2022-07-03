@@ -1,0 +1,39 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.user-div{
+  line-height: 64px;
+  display: flex;
+  float: right;
+}
+.user-img{
+  width: 45px;
+  height: 45px;
+
+}
+.user-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.user-name{
+  padding-left: 10px;
+  padding-right: 20px;
+  font-weight: 500;
+}
+
+.user-type ul li{
+  width: 100px;
+  border: 1px solid red;
+  background-color: #fff;
+}
