@@ -59,9 +59,7 @@ export default class Home extends Component {
           </Form>
         </div>
         <div className="home-table">
-          <Card title="home表单" bordered={false} style={{ width: "100%" }}>
-            <Table columns={columns} dataSource={data} />;
-          </Card>
+          <Table columns={columns} dataSource={data} />;
         </div>
       </div>
     );

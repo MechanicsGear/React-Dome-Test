@@ -7,7 +7,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const data = [
+    const dataSource = [
       {
         key: "1",
         name: "胡彦斌",
@@ -60,7 +60,7 @@ export default class Home extends Component {
         </div>
         <div className="home-table">
           <Card title="home表单" bordered={false} style={{ width: "100%" }}>
-            <Table columns={columns} dataSource={data} />;
+            <Table dataSource={dataSource} columns={columns} />;
           </Card>
         </div>
       </div>

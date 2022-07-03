@@ -7,7 +7,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const data = [
+    const dataSource = [
       {
         key: "1",
         name: "胡彦斌",
@@ -22,7 +22,7 @@ export default class Home extends Component {
       },
     ];
 
-    const columns = [
+    const data = [
       {
         title: "姓名",
         dataIndex: "name",
